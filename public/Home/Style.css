@@ -1,0 +1,38 @@
+a{
+    color: #3576b3;
+    padding: 10px;
+    }
+    
+div.HyperLink{
+    
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    text-emphasis-color:  black;
+}
+.homePageLinks{
+    color:black;
+}
+.homePageLinks:hover{
+    color:red;
+}
+
+
+.Header{
+    text-align: center;
+    color: #6F5A48;
+    font-style: italic;
+}
+
+.photo{
+    height: 400px;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+   margin-right: auto;
+}
+
+body{
+    background-color: #F5F5DC;
+    
+}
