@@ -11,15 +11,15 @@
     <div id="loginForm">
     <form action="/BlackJack/BlackJackLogin" method ="POST">
     <div>
-        <input type="text" id="Email" name="Email" placeholder="Email"></input>
-        <button type="submit" id="startGame">Start</button>
+        <input type="email" id="email" name="email" placeholder="email" required></input>
     </div>
     <div>
-        <input type="password" id="password" name="password" placeholder="Password"></input>
+        <input type="password" id="password" name="password" placeholder="Password" required></input>
     </div>
     <div>
         <a href="/BlackJack/Register" id="registerButton">Register</a>
     </div>
+        <button type="submit" id="startGame">Login</button>
     </form>
     </div>
 </body>

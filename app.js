@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 
 app.use("/", express.static("public/Home"));
+app.use("/AboutMe", express.static("public/AboutMe"));
 app.use("/BlackJack", express.static("public/BlackJack"));
 app.use("/BlackJack/BlackJackLogin", express.static("public/BlackJackLogin"));
 app.use("/BlackJack/Register", express.static("public/Register"));
