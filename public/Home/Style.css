@@ -1,38 +1,35 @@
-a{
-    color: #3576b3;
-    padding: 10px;
-    }
-    
-div.HyperLink{
-    
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    text-emphasis-color:  black;
-}
-.homePageLinks{
-    color:black;
-}
-.homePageLinks:hover{
-    color:red;
+a {
+  color: #3576b3;
+  padding: 10px;
 }
 
-
-.Header{
-    text-align: center;
-    color: #6F5A48;
-    font-style: italic;
+div.HyperLink {
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  text-emphasis-color: black;
+}
+.homePageLinks {
+  color: black;
+}
+.homePageLinks:hover {
+  color: red;
 }
 
-.photo{
-    height: 400px;
-    width: 300px;
-    display: block;
-    margin-left: auto;
-   margin-right: auto;
+.Header {
+  text-align: center;
+  color: #6f5a48;
+  font-style: italic;
 }
 
-body{
-    background-color: #F5F5DC;
-    
+.photo {
+  height: 400px;
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background-color: #f5f5dc;
 }
