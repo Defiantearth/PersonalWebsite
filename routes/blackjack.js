@@ -37,25 +37,21 @@ initializePassport(
 );
 
 async function getUserByEmail(email) {
-  console.log(email);
   let user = (await query(`select * from blackjack where email = '${email}'`))
     .recordsets[0][0];
-  //console.log(user);
   return user;
 }
 
 async function getUserById(id) {
-  console.log(id);
   let user = (await query(`select * from blackjack where ID = '${id}'`))
     .recordsets[0][0];
-  console.log("fuck");
-  console.log(user);
+  return user;
 }
 
 //BlackJack Page
-router.get("/", checkAuthenticated, (req, res) => {
-  res.render("../public/BlackJack/index.html");
-});
+// router.get("/", checkAuthenticated, (req, res) => {
+//   res.render("../public/BlackJack/index.html");
+// });
 
 router.post("/register", checkNotAuthenticated, async (req, res) => {
   try {
@@ -136,15 +132,21 @@ function checkNotAuthenticated(req, res, next) {
 //   res.redirect("/BlackJack");
 // });
 
-router.get("/chipAmount", (req, res) => {
-  res.json({ success: true, data: playerChips });
+router.get("/chipAmount", async (req, res) => {
+  var playersChips = await getUserById(req.session.passport.user);
+  playersChips = playersChips.chipAmount;
+  console.log(playersChips);
+  res.json({
+    success: true,
+    data: playersChips,
+  });
 });
 
 router.post("/chipAmount", (req, res) => {
   let data = req.body.chips;
   console.log(data);
   query(
-    `update blackJack set chipAmount = ${req.body.chips} where userName = '${userName}'`
+    `update blackJack set chipAmount = ${req.body.chips} where ID = '${req.session.passport.user}'`
   );
 });
 
