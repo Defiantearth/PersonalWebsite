@@ -1,0 +1,15 @@
+project ideas:
+    wordle game
+    clicker game
+    card game
+    job scraper
+    quiz website (how well do you know us?)
+
+
+    TODO
+    -Let the player bet an amount of chips and if he wins then double that amount.
+    -a little bit of design
+
+    -Shop Maybe
+    Would make game like a rouge Like BlackJack
+    could buy DDBL down button, split button, 
