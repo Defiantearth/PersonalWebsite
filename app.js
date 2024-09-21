@@ -16,6 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/BlackJack", blackjackRouter);
 
-app.listen(5000, () => {
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
   console.log("port is listening on port 5000...");
 });

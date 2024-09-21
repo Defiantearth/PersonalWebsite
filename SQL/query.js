@@ -1,25 +1,28 @@
-const sql = require("mssql");
-const config = require("./config.js");
-
+const { response } = require("express");
+const { Client } = require("pg");
 async function databaseRequest(userQuery) {
+  // Set up the connection configuration
+  const client = new Client({
+    user: "postgres", // Database username
+    host: "localhost", // Database host
+    database: "nodeJs", // Database name
+    password: "BoTi3005$$$", // Database password
+    port: 5432, // PostgreSQL port (default is 5432)
+  });
+
   try {
     // Connect to the database
-    let pool = await sql.connect(config);
+    await client.connect();
+    console.log("connected to PostgreSQL");
 
-    // Execute a query
-    let result = await pool.request().query(userQuery);
+    // Query example
+    let response = await client.query(userQuery);
 
-    //console.log(result);
-    // Close the connection
-    sql.close();
-    return result;
-    //result.recordset[1].ID;
+    return response.rows;
   } catch (err) {
-    console.error("SQL error", err);
+    console.error("Error executing query", err.stack);
+  } finally {
+    await client.end();
   }
-
-  // Execute the query function
-  queryDatabase();
 }
-
 module.exports = databaseRequest;
